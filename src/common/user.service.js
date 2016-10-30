@@ -10,10 +10,10 @@ function RegisterService($http, ApiPath) {
   var service = this;
   service.user = null;
 
-  service.getFavItem = function (favItem) {
+  service.getfavoriteItem = function (favoriteItem) {
 	return $http({
 		method: "GET",
-		url: ApiPath + '/menu_items/' + favItem + '.json',
+		url: ApiPath + '/menu_items/' + favoriteItem + '.json',
 	})
   };
 

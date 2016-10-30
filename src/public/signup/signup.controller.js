@@ -4,7 +4,7 @@
 angular.module('public')
 .controller('SignupController', SignupController);
 
-SignupController.$inject = [""];
+SignupController.$inject = ["RegisterService"];
 
 function SignupController(RegisterService) {
   var $ctrl = this;
@@ -14,11 +14,11 @@ function SignupController(RegisterService) {
 
   $ctrl.submit = function(){
 
-	  	if($ctrl.user.favItem === undefined){
-			$ctrl.user.favItem = "";
+	  	if($ctrl.user.favoriteItem === undefined){
+			$ctrl.user.favoriteItem = "";
 		}
 
-		RegisterService.getFavItem($ctrl.user.favItem).then(function successCallback(response){
+		RegisterService.getfavoriteItem($ctrl.user.favoriteItem).then(function successCallback(response){
 			$ctrl.success = true;
 			$ctrl.failure = false;
 			$ctrl.user.fav = response.data;
