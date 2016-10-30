@@ -1,0 +1,16 @@
+<div class="container">
+	<h2> My Info </h2>
+	<h4 ng-if="myInfoCtrl.user === null">Not Signed Up Yet. <a ui-sref="public.signup">Sign up</a> Now!</h4>
+
+	<div ng-if="myInfoCtrl.user !== null">
+		<h4>First Name: {{myInfoCtrl.user.firstname}}</h4>
+		<h4>Last Name: {{myInfoCtrl.user.lastname}}</h4>
+		<h4>Email: {{myInfoCtrl.user.email}}</h4>
+		<h4>Phone Number: {{myInfoCtrl.user.phoneNumber}}</h4>
+		<h4>Favourite Item: {{myInfoCtrl.user.fav.name}}</h4>
+		<p>Description: {{myInfoCtrl.user.fav.description}}</p>
+		<img ng-src={{myInfoCtrl.user.fav.imgUrl}} alt="images/menu/FY/FY.jpg"/>
+	</div>
+
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+
+	<div class="alert alert-success" ng-if="signupCtrl.success">
+  		<strong>Success!</strong> Your information has been saved.
+	</div>
+
+	<div class="alert alert-danger" ng-if="signupCtrl.failure">
+  		<strong>Error!</strong> No such menu number exists.
+	</div>
+
+	<h2 id="menu-categories-title">Sign Up for our Newsletter</h2>
+
+	<form name='signupForm' novalidate>
+
+		<input type="text" name="firstname" placeholder="First Name" ng-model="signupCtrl.user.firstname" required class="text-primary">
+        <span ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">First name is required</span>
+        <br>
+		<br>
+
+		<input type="text" name="lastname" placeholder="Last Name" ng-model="signupCtrl.user.lastname" required class="text-primary">
+        <span ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">Last name is required</span>
+        <br>
+		<br>
+
+		<input type="email" name="email" placeholder="Email" ng-model="signupCtrl.user.email" required class="text-primary">
+        <span ng-if="signupForm.email.$error.required && signupForm.email.$touched">Email is required</span>
+		<span ng-if="signupForm.email.$invalid && signupForm.email.$touched && !signupForm.email.$error.required">Please enter a valid email</span>
+        <br>
+		<br>
+
+		<input type="number" name="phoneNumber" placeholder="Phone Number" ng-model="signupCtrl.user.phoneNumber" required class="text-primary">
+        <span ng-if="signupForm.phoneNumber.$error.required && signupForm.phoneNumber.$touched">Phone number is required</span>
+		<span ng-if="signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$touched && !signupForm.phoneNumber.$error.required">Please enter a valid phone number</span>
+        <br>
+		<br>
+
+		<input type="text" name="favItem" placeholder="Favourite Menu Item" ng-model="signupCtrl.user.favItem" class="text-primary">
+        <br>
+		<br>
+
+		<button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()" class="btn btn-primary col-md-2">Submit</button>
+
+	</form>
+
+</div>
